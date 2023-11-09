@@ -23,6 +23,7 @@ public class CalcolaBiglietto {
 		//standard price
 		double standardPrice = distance * PRICE_KM;
 		double discount = 0;
+		
 		//discount condition
 		if (userAge < underAge) {
 			discount = standardPrice * 0.20;
@@ -33,7 +34,9 @@ public class CalcolaBiglietto {
 		
 		double discountedPrice = standardPrice - discount;
 		
-		System.out.println((userAge < underAge) ? discountedPrice : ((userAge > over65) ? discountedPrice : standardPrice));
+		String formatedPrice = String.format("%.2f", discountedPrice);
+		
+		System.out.println((userAge < underAge) ? formatedPrice : ((userAge > over65) ? formatedPrice : standardPrice));
 		
 		
 		// stop scanner
